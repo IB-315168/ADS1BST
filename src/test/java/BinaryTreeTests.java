@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BinaryTreeTests
 {
-  private BinaryTree binaryTree;
+  private BinaryTree<Integer> binaryTree;
 
   @BeforeEach public void setUp() {
-    binaryTree = new BinaryTree();
+    binaryTree = new BinaryTree<>();
     System.out.println("---> Start test");
   }
 
