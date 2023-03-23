@@ -1,3 +1,4 @@
+import com.IB315168.models.BinaryTree;
 import com.IB315168.models.BinaryTreeNode;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
