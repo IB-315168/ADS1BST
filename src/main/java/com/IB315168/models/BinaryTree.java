@@ -109,9 +109,34 @@ public class BinaryTree<T>
   }
 
   public int height() {
-    return 0;
-  }
+    //Not optimal, requires an update
+    ArrayList<Integer> elements = new ArrayList<>();
 
+    List<BinaryTreeNode<T>> list = new ArrayList<>();
+    list.add(root);
+
+    int count = 0;
+
+    while(!list.isEmpty()) {
+      BinaryTreeNode<T> temp = list.remove(0);
+
+      count++;
+
+      if(temp.getLeftChild() != null) {
+        list.add(temp.getLeftChild());}
+
+      if(temp.getRightChild() != null) {
+        list.add(temp.getRightChild());}
+
+      if(temp.getLeftChild() == null && temp.getRightChild() == null) {
+        elements.add(count);
+        count = 0;
+      }
+    }
+
+    //Accounting for root
+    return elements.stream().max(Integer::compareTo).get()-1;
+  }
 
   private ArrayList<T> preOrderRec(ArrayList<T> list, BinaryTreeNode<T> node) {
     if (node != null) {
