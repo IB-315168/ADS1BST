@@ -3,8 +3,8 @@ package com.IB315168.models;
 public class BinaryTreeNode<T>
 {
   private final T element;
-  private BinaryTreeNode leftChild;
-  private BinaryTreeNode rightChild;
+  private BinaryTreeNode<T> leftChild;
+  private BinaryTreeNode<T> rightChild;
 
   public BinaryTreeNode(T element)
   {
@@ -12,7 +12,7 @@ public class BinaryTreeNode<T>
     this.leftChild = null;
     this.rightChild = null;
   }
-  public BinaryTreeNode(T element, BinaryTreeNode leftChild, BinaryTreeNode rightChild)
+  public BinaryTreeNode(T element, BinaryTreeNode<T> leftChild, BinaryTreeNode<T> rightChild)
   {
     this.element = element;
     this.leftChild = leftChild;
@@ -23,22 +23,22 @@ public class BinaryTreeNode<T>
   {
     return element;
   }
-  public BinaryTreeNode getLeftChild()
+  public BinaryTreeNode<T> getLeftChild()
   {
     return leftChild;
   }
 
-  public void setLeftChild(BinaryTreeNode leftChild)
+  public void setLeftChild(BinaryTreeNode<T> leftChild)
   {
     this.leftChild = leftChild;
   }
 
-  public BinaryTreeNode getRightChild()
+  public BinaryTreeNode<T> getRightChild()
   {
     return rightChild;
   }
 
-  public void setRightChild(BinaryTreeNode rightChild)
+  public void setRightChild(BinaryTreeNode<T> rightChild)
   {
     this.rightChild = rightChild;
   }

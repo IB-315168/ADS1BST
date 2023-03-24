@@ -41,9 +41,33 @@ public class BinaryTreeTests
 
   @Test
   public void sizeTree() {
-    BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
+    BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
     binaryTree.setRoot(root);
-    assertEquals(1, binaryTree.size());
+
+    //Create some nodes
+    BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
+    BinaryTreeNode<Integer> child7 = new BinaryTreeNode<>(7);
+
+    //Make them children
+    root.setLeftChild(child2);
+    root.setRightChild(child7);
+
+    //Create some more nodes
+    BinaryTreeNode<Integer> child6 = new BinaryTreeNode<>(6);
+    BinaryTreeNode<Integer> child8 = new BinaryTreeNode<>(8);
+    BinaryTreeNode<Integer> child9 = new BinaryTreeNode<>(9);
+    BinaryTreeNode<Integer> child1 = new BinaryTreeNode<>(1);
+    BinaryTreeNode<Integer> child3 = new BinaryTreeNode<>(3);
+
+    //Make more children
+    child7.setLeftChild(child6);
+    child7.setRightChild(child8);
+
+    child8.setRightChild(child9);
+
+    child2.setLeftChild(child1);
+    child2.setRightChild(child3);
+    assertEquals(8, binaryTree.size());
   }
 
   @Test
@@ -58,6 +82,7 @@ public class BinaryTreeTests
   @Test
   public void inOrderTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+    binaryTree.setRoot(root);
 
     //Create some nodes
     BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
@@ -89,6 +114,7 @@ public class BinaryTreeTests
   @Test
   public void preOrderTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+    binaryTree.setRoot(root);
 
     //Create some nodes
     BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
@@ -120,6 +146,7 @@ public class BinaryTreeTests
   @Test
   public void postOrderTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+    binaryTree.setRoot(root);
 
     //Create some nodes
     BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
@@ -151,6 +178,7 @@ public class BinaryTreeTests
   @Test
   public void levelOrderTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+    binaryTree.setRoot(root);
 
     //Create some nodes
     BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
@@ -182,6 +210,7 @@ public class BinaryTreeTests
   @Test
   public void heightTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);
+    binaryTree.setRoot(root);
 
     //Create some nodes
     BinaryTreeNode<Integer> child2 = new BinaryTreeNode<>(2);
