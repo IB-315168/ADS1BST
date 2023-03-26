@@ -1,5 +1,6 @@
 import com.IB315168.models.BinaryTree;
 import com.IB315168.models.BinaryTreeNode;
+import com.IB315168.models.BinaryTreePrint;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BinaryTreeTests
 {
   private BinaryTree<Integer> binaryTree;
+  private BinaryTreePrint printer = new BinaryTreePrint();
 
   @BeforeEach public void setUp() {
     binaryTree = new BinaryTree<>();
@@ -19,7 +21,12 @@ public class BinaryTreeTests
   }
 
   @AfterEach public void breakDown() {
-    System.out.println("<--- End test");
+    if(!binaryTree.isEmpty()) {
+      System.out.println("----------------------------------------Tree layout--"
+          + "--------------------------------------");
+      printer.printTree(binaryTree.getRoot());
+    }
+    System.out.println("\n<--- End test");
   }
 
   @Test
@@ -77,8 +84,6 @@ public class BinaryTreeTests
     assertTrue(binaryTree.contains(root.getElement()));
   }
 
-  //Following set of tests will involve a tree that has plenty of nodes, for easier
-  // visualization, see reference image in README tests section
   @Test
   public void inOrderTree() {
     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(5);

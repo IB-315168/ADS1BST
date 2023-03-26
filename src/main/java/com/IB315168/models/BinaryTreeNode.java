@@ -1,6 +1,6 @@
 package com.IB315168.models;
 
-public class BinaryTreeNode<T>
+public class BinaryTreeNode<T extends Comparable<T>>
 {
   private final T element;
   private BinaryTreeNode<T> leftChild;

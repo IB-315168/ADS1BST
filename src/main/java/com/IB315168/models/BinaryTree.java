@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BinaryTree<T>
+public class BinaryTree<T extends Comparable<T>>
 {
   private BinaryTreeNode<T> root;
 
