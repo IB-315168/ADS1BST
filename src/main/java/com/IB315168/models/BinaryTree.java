@@ -109,33 +109,17 @@ public class BinaryTree<T extends Comparable<T>>
   }
 
   public int height() {
-    //Not optimal, requires an update
-    ArrayList<Integer> elements = new ArrayList<>();
+    return getHeight(root)-1;
+  }
 
-    List<BinaryTreeNode<T>> list = new ArrayList<>();
-    list.add(root);
-
-    int count = 0;
-
-    while(!list.isEmpty()) {
-      BinaryTreeNode<T> temp = list.remove(0);
-
-      count++;
-
-      if(temp.getLeftChild() != null) {
-        list.add(temp.getLeftChild());}
-
-      if(temp.getRightChild() != null) {
-        list.add(temp.getRightChild());}
-
-      if(temp.getLeftChild() == null && temp.getRightChild() == null) {
-        elements.add(count);
-        count = 0;
-      }
+  private int getHeight(BinaryTreeNode<T> node) {
+    if (node == null) {
+      return 0;
     }
 
-    //Accounting for root
-    return elements.stream().max(Integer::compareTo).get()-1;
+    int leftHeight = getHeight(node.getLeftChild());
+    int rightHeight = getHeight(node.getRightChild());
+    return 1 + Math.max(leftHeight, rightHeight);
   }
 
   private ArrayList<T> preOrderRec(ArrayList<T> list, BinaryTreeNode<T> node) {

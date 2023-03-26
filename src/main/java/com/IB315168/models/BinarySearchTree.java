@@ -230,7 +230,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>
     return getHeight(node.getLeftChild()) - getHeight(node.getRightChild());
   }
 
-  int getHeight(BinaryTreeNode<T> node) {
+  private int getHeight(BinaryTreeNode<T> node) {
     if (node == null) {
       return 0;
     }
@@ -240,7 +240,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>
     return 1 + Math.max(leftHeight, rightHeight);
   }
 
-  BinaryTreeNode<T> rotateRight(BinaryTreeNode<T> node) {
+  private BinaryTreeNode<T> rotateRight(BinaryTreeNode<T> node) {
     BinaryTreeNode<T> leftChild = node.getLeftChild();
     BinaryTreeNode<T> leftRightChild = leftChild.getRightChild();
 
@@ -250,7 +250,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>
     return leftChild;
   }
 
-  BinaryTreeNode<T> rotateLeft(BinaryTreeNode<T> node) {
+  private BinaryTreeNode<T> rotateLeft(BinaryTreeNode<T> node) {
     BinaryTreeNode<T> rightChild = node.getRightChild();
     BinaryTreeNode<T> rightLeftChild = rightChild.getLeftChild();
 

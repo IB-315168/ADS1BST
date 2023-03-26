@@ -97,10 +97,17 @@ public class BinarySearchTreeTests
   }
 
   @Test
-  public void balancing() {
+  public void balancing1() {
     binarySearchTree.insert(10);
     binarySearchTree.insert(11);
     binarySearchTree.insert(12);
+    binarySearchTree.rebalance();
+  }
+
+  @Test
+  public void balancing2() {
+    binarySearchTree.removeElement(2);
+    binarySearchTree.removeElement(1);
     binarySearchTree.rebalance();
   }
 }
